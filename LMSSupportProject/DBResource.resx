@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetVideoQuery" xml:space="preserve">
+    <value>select V.ID as VideoID, V.[Status] as VideoStatus from Videos V where V.ID = @VideoID</value>
+  </data>
+  <data name="GetVideos" xml:space="preserve">
+    <value>SELECT ID, [Status], EncodingStartedAt, EncodingEndedAt FROM [Videos] WHERE ID in (select TRIM(value) from string_split(@IDs,','))</value>
+  </data>
+  <data name="HandoutQuery" xml:space="preserve">
+    <value>SELECT top 100 f.ID as FileID, f.[Name] as [FileName], f.[FilePath], f.[Sequence] as FileSequence, f.[Type] as FileType, f.[Status] as FileStatus,
+		f.[CreatedAt] as FileCreatedAt, f.[CreatedBy] as FileCreatedBy, f.[UpdatedBy] as FileUpdatedBy, f.[UpdatedAt] as FileUpdatedAt,
+		f.EntityID as ChapterID, c.Title as ChapterTitle, c.PaperID, p.Title as PaperTitle, CONCAT(t.FirstName, ' ', t.LastName) as Trainer,
+		p.CourseID, co.Title as CourseTitle, co.QualificationID, q.Title as QualificationTitle,
+		f.IsDelete as FileDeleted, c.IsDelete as ChapterDeleted, p.IsDelete as PaperDeleted, co.IsDelete as CourseDeleted,
+		q.IsDelete as QualificationDeleted, Concat(us.FirstName, ' ' ,us.LastName) as FullName
+FROM [Files] f
+JOIN [Chapter] c on f.EntityID = c.ID
+join [Paper] p on c.PaperID = p.ID
+join [user] t on p.TutorID = t.ID
+join [Course] co on p.CourseID = co.ID
+join [Qualification] q on co.QualificationID = q.ID
+join [User] us on us.ID = f.CreatedBy
+WHERE f.InstituteID = @InstituteID and f.[Entity] = 'Chapter' AND f.[EntityID] = COALESCE(@ChapterID, [EntityID])
+AND c.PaperID = COALESCE(@PaperID, c.PaperID) AND f.[Name] = COALESCE(@FileTitle, f.[Name])</value>
+  </data>
+  <data name="LectureDetailsQuery" xml:space="preserve">
+    <value>select top 1 l.ID as LectureID, l.Title as LectureTitle, l.[Status] as LectureStatus, ld.CustomField1 as VideoID,
+		(l.[duration] / 60) as DurationInMins, Size as SizeInMB, 
+		CEILING((l.[Size] / (l.[duration] / 60))) as MBsPerMinute,
+		CEILING(((l.[Size] * 8) / (l.[duration] / 60)))/60 as ApproximateInternetSpeedRequiredInMbps,
+		l.[StartDate], l.EndDate, l.CreatedAt, l.CreatedBy, cb.Email as CreatedByEmail, CONCAT(cb.FirstName, ' ', cb.LastName) as CreatedByName,
+		l.UpdatedAt, l.UpdatedBy, ub.Email as UpdatedByEmail, CONCAT(ub.FirstName, ' ', ub.LastName) as UpdatedByName,
+		l.ChapterID, c.Title as ChapterTitle, c.PaperID, p.Title as PaperTitle, CONCAT(t.FirstName, ' ', t.LastName) as Trainer,
+		p.CourseID, co.Title as CourseTitle, co.QualificationID, q.Title as QualificationTitle,
+		l.IsDelete as LectureDeleted, c.IsDelete as ChapterDeleted, p.IsDelete as PaperDeleted, co.IsDelete as CourseDeleted, q.IsDelete as QualificationDeleted 
+from [lecture] l
+join [user] cb on l.CreatedBy = cb.ID
+join [user] ub on l.UpdatedBy = ub.ID
+join [lecturedetail] ld on ld.LectureID = l.ID
+join [chapter] c on l.ChapterID = c.ID
+join [Paper] p on c.PaperID = p.ID
+join [user] t on p.TutorID = t.ID
+join [Course] co on p.CourseID = co.ID
+join [Qualification] q on co.QualificationID = q.ID
+where l.InstituteID = @InstituteID and l.TypeID = 38 and l.ID = COALESCE(@LectureID, l.ID) and l.ChapterID = COALESCE(@ChapterID, l.ChapterID)
+and c.PaperID = COALESCE(@PaperID, c.PaperID) and l.Title = COALESCE(@LectureTitle, l.Title)</value>
+  </data>
+  <data name="LVLQuery" xml:space="preserve">
+    <value>select lvl.ID as LectureViewID, lvl.LectureID, ld.CustomField1 as VideoID, lvl.LogAt,
+		concat(co.Title, ' (', p.Title, ')') as Course,
+	c.Title as Chapter, l.Title as Lecture,
+	(l.[duration] / 60) as DurationInMins, Size as SizeInMB, 
+	CEILING((l.[Size] / (l.[duration] / 60))) as MBsPerMinute,
+	CEILING(((l.[Size] * 8) / (l.[duration] / 60)))/60 as ApproximateInternetSpeedRequiredInMbps,
+	l.[StartDate], l.EndDate, l.CreatedAt as LectureCreatedAt
+from [lectureviewlog] lvl
+join Institute Inst on Inst.ID = lvl.InstituteId
+	join [User] u on u.ID = lvl.UserID
+join lecture l on lvl.LectureID = l.ID
+join [lecturedetail] ld on ld.lectureid = l.id
+join [chapter] c on l.chapterid = c.id
+join [paper] p on c.paperid = p.id
+join [course] co on p.courseid = co.id
+where u.Email = COALESCE(@UserEmail , u.Email) and Inst.ID = @InstituteID and lvl.UserID = COALESCE(@UserID, lvl.UserID) and 
+	lvl.logat &gt; dateadd(day, (-1 * @NoOfDays), getdate()) and l.TypeID = 38 
+	order by lvl.LogAt desc</value>
+  </data>
+  <data name="UserDeviceInfoQuery" xml:space="preserve">
+    <value>Select UD.UserID as UserID,  UD.DeviceID as DeviceID, UD.DeviceInfo as DeviceInfo, UD.[Status] as DeviceStatus, UD.CreatedAt as CreatedAt, UD.UpdatedAt as UpdatedAt from UserDevices UD where UD.UserID = @UserID and UD.IsDelete = 0</value>
+  </data>
+  <data name="UserInfoQuery" xml:space="preserve">
+    <value>Select U.ID as UserID, U.Email as UserEmail, U.FirstName as FirstName, U.LastName as LastName from [User] U where U.InstituteID = @InstituteID and U.Email = COALESCE(@UserEmail, U.Email) AND [IsDelete] = 0 ORDER BY CreatedAt DESC</value>
+  </data>
+</root>
